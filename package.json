@@ -1,0 +1,39 @@
+{
+  "name": "goit-js-hw-09",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "https://github.com/rywkimz/goit-js-hw-09",
+  "type": "module",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rywkimz/goit-js-hw-09"
+  },
+  "keywords": [],
+  "author": "Georgiana Fildan <georgiana03@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rywkimz/goit-js-hw-09/issues"
+  },
+  "dependencies": {
+    "@vimeo/player": "^2.23.0",
+    "lodash": "^4.17.21",
+    "modern-normalize": "^1.1.0",
+    "simplelightbox": "^2.14.3"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
+    "flatpickr": "^4.6.13",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "path-browserify": "^1.0.1",
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10",
+    "vm-browserify": "^1.1.2"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
