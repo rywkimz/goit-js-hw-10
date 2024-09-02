@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Page title</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <link rel="stylesheet" href="css/common.css" />
+    <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <h1>Home Page</h1>
-
-    <!-- Navigation Links -->
-    <a href="01-color-switcher.html">Color Switcher</a>
-    <a href="02-timer.html">Timer</a>
-    <a href="03-promises.html">Promises</a>
-
-    <div id="content">
-      <p>Welcome to the homepage!</p>
-    </div>
-
-    <script type="module" src="./index.js"></script>
+    <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <include src="./partials/example.html"></include>
   </body>
 </html>
