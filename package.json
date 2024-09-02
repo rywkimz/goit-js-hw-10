@@ -2,25 +2,28 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://github.com/rywkimz/goit-js-hw-10",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /https://github.com/rywkimz/goit-js-hw-10/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/goitacademy/https://github.com/rywkimz/goit-js-hw-10"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Georgiana Fildan <fil.georgiana03@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/goitacademy/https://github.com/rywkimz/goit-js-hw-10"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "axios": "^1.7.7",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
     "@parcel/transformer-sass": "^2.6.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
