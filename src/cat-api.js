@@ -1,33 +1,39 @@
-import axios from 'axios';
+import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
+import './app.js'; // This line can be omitted unless it's needed for some initialization in your project
 
-// Set the default API key for axios
-axios.defaults.headers.common['x-api-key'] = 'CHEIA_TA_API'; // Replace 'CHEIA_TA_API' with your actual API key
+document.addEventListener('DOMContentLoaded', () => {
+  const breedSelect = document.querySelector('.breed-select');
 
-/**
- * Fetches the list of cat breeds from The Cat API.
- * @returns {Promise<Array>} A promise that resolves to an array of breeds.
- */
-export function fetchBreeds() {
-  return axios
-    .get('https://api.thecatapi.com/v1/breeds')
-    .then(response => response.data)
+  // Fetch and populate the breed dropdown on page load
+  fetchBreeds()
+    .then(breeds => {
+      breeds.forEach(breed => {
+        const option = document.createElement('option');
+        option.value = breed.id;
+        option.textContent = breed.name;
+        breedSelect.appendChild(option);
+      });
+
+      breedSelect.style.display = 'block'; // Show the select dropdown
+      Notiflix.Loading.remove(); // Remove loading indicator
+    })
     .catch(error => {
-      console.error('Error fetching breeds:', error);
-      throw error; // Rethrow the error to be handled by the caller
+      console.error('Error:', error);
+      Notiflix.Loading.remove(); // Remove loading indicator
+      Notiflix.Report.failure(
+        'Error',
+        'Could not fetch breeds. Please try again later.',
+        'Close'
+      );
     });
-}
 
-/**
- * Fetches cat information based on the breed ID.
- * @param {string} breedId - The ID of the breed to fetch.
- * @returns {Promise<Object>} A promise that resolves to the cat information object.
- */
-export function fetchCatByBreed(breedId) {
-  return axios
-    .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
-    .then(response => response.data[0]) // Assuming the response is an array with the cat object at index 0
-    .catch(error => {
-      console.error('Error fetching cat by breed:', error);
-      throw error; // Rethrow the error to be handled by the caller
+  // Listen for changes in the breed selection and fetch the corresponding cat image
+  breedSelect.addEventListener('change', function () {
+    const selectedBreedId = this.value;
+    fetchCatByBreed(selectedBreedId).then(cats => {
+      const img = document.createElement('img');
+      img.src = cats[0].url; // Assuming you want the first image in the result
+      document.querySelector('.cat-info').appendChild(img); // Append the image to your desired container
     });
-}
+  });
+});
