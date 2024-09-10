@@ -14,10 +14,16 @@
     <p class="loader">Loading data, please wait...</p>
     <p class="error">Oops! Something went wrong! Try reloading the page!</p>
     <div class="cat-info"></div>
+    <span class="loader"></span>
 
     <!-- Include Notiflix JavaScript -->
     <script src="dist/notiflix-3.2.7.min.js"></script>
     <!-- Include your custom JavaScript -->
     <script src="src/app.js" type="module"></script>
+    <script>
+      new SlimSelect({
+        select: '#selectElement',
+      });
+    </script>
   </body>
 </html>
